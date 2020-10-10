@@ -1,0 +1,6 @@
+za\co\eblocks\phonebook\web\rest\RestControllerAdvice.class
+za\co\eblocks\phonebook\configuration\SwaggerConfig.class
+za\co\eblocks\phonebook\PhonebookApplication.class
+za\co\eblocks\phonebook\persistance\entity\Contact.class
+za\co\eblocks\phonebook\web\rest\ContactController.class
+za\co\eblocks\phonebook\persistance\Repository\ContactRepository.class

@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  phonebook:
+    image: phonebook:1.0.0
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+  database:
+    image: mysql:5.7
+    ports:
+    - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_DATABASE: phonebook
+      MYSQL_USER: root
+      MYSQL_PASSWORD: changeme
+      MYSQL_ROOT_PASSWORD: changeme
+    volumes:
+      - database-data:/var/lib/mysql
+
+    # Volumes
+volumes:
+  database-data:
