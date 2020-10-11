@@ -1,5 +1,9 @@
 # Phonebook
 
+A simple phonebook web page that loads contacts into a table.
+The columns are all sortable and filterable. 
+Minimum functionality includes: view all contacts, create a new contact, update contact, delete a contact.
+
 ## Assumptions: 
 - You have the docker engine installed and running
 - You have mysql installed and running
