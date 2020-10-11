@@ -9,7 +9,7 @@ Minimum functionality includes: view all contacts, create a new contact, update 
 - You have mysql installed and running
 
 
-# Starting the application manually
+# Starting the application
 
 - open both the api and front-end in your respective IDE's for Angular and Java
 - run the api, the service will be accessible via port 5000
