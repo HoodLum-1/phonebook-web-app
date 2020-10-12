@@ -1,0 +1,55 @@
+
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offser-2">
+    <h3>Create Contact</h3>
+    
+    <div [hidden]="submitted" style="width: 400px;">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div id="user-data">
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control" ngModel name="name" #name="ngModel" required min="3">
+            <div class="alert alert-danger" *ngIf="!name.valid && name.touched">
+              Name is required!
+            </div>
+            <div class="alert alert-danger" *ngIf="name.errors && name.touched">
+              Name must be 3 character or more
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="email">e-Mail</label>
+            <input type="text"  class="form-control" id="email" ngModel name="email" required email #email="ngModel">
+            <div class="alert alert-danger" *ngIf="!email.valid && email.touched">
+              Please enter a valid email!
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="number">Number</label>
+            <input type="text" class="form-control" id="number" required ngModel name="number" required #number="ngModel">
+            <div class="alert alert-danger" *ngIf="!number.valid && number.touched">Number is required!</div>
+          </div>
+  
+          <div class="form-group">
+            <label for="type">Type</label>
+            <select type="text" id="type" class="form-control" required ngModel #type="ngModel" name="type">
+              <option *ngFor="let t of types" >
+                {{t.type}}
+              </option>
+            </select>
+            <div class="alert alert-danger" *ngIf="!type.valid && type.touched">
+              Type is required!
+            </div>
+          </div>  
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="!f.valid" (click)="newContact()" >Submit</button>
+      </form>
+    </div>
+
+    <div [hidden]="!submitted">
+      <h4>You submitted successfully!</h4>
+    </div>
+      </div>
+</div>

@@ -1,0 +1,41 @@
+
+    <h3>Update Employee</h3>
+    <div style="width: 400px;">
+        <div [hidden]="submitted" style="width: 400px;">
+          <form (ngSubmit)="onSubmit()" #f="ngForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input #name="ngModel" type="text" class="form-control" id="name" required [(ngModel)]="contact.name" name="name">
+              <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+                Name is required!
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="ename">e-Mail</label>
+              <input #email="ngModel" type="text" class="form-control" id="email" required email [(ngModel)]="contact.email" name="email">
+              <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+                e-Mail is required!
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="number">Number</label>
+              <input #number="ngModel" type="number" class="form-control" id="number" required [(ngModel)]="contact.number" name="number">
+              <div class="alert alert-danger" *ngIf="!number.valid && number.touched">Number is required!</div>
+            </div>
+
+            <div class="form-group">
+              <label for="type">Type</label>
+              <select #type="ngModel" type="text" name="type" id="type" class="form-control" required [(ngModel)]="contact.type" name="type">
+                <option *ngFor="let t of types" >
+                  {{t.type}}
+                </option>
+              </select>
+              <div class="alert alert-danger" *ngIf="type.touched && type.invalid">
+                Type is required!
+              </div>
+            </div>  
+
+        <button type="submit" class="btn btn-success" [disabled]="!f.valid"  (click)="updateContact()" >Update</button>
+      </form>
+    </div>
